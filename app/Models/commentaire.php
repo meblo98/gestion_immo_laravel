@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class commentaire extends Model
 {
     use HasFactory;
+    protected $fillable=[
+        'nom',
+        'contenu',
+        'bien_id'
+    ];
 }
