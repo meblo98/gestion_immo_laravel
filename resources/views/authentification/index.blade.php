@@ -11,7 +11,7 @@
 
 <div class="container mt-3">
   <h2>CONNEXION</h2>
-  <form action="{{route('admin.creation')}}" method="post">
+  <form action="{{route('User.creation')}}" method="post">
   @method('POST')
   @csrf
   <div class="row">
