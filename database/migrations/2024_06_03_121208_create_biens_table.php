@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('biens', function (Blueprint $table) {
             $table->id();
+            $table->string('url_image');
+            $table->string('nom');
+            $table->enum('categorie',['luxe','moyen']);
+            $table->text('description');
+            $table->string('localisation');
+            $table->enum('statut',['occupé','non occupé']);
             $table->timestamps();
         });
     }

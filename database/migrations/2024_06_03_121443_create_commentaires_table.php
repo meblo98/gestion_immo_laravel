@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('commentaires', function (Blueprint $table) {
             $table->id();
-            
+            $table->string('nom');
+            $table->text('contenu');
+            $table->unsignedBigInteger('bien_id');
+            $table->foreign('bien_id')->references('id')->on('biens');
             $table->timestamps();
         });
     }
