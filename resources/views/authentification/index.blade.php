@@ -11,18 +11,7 @@
 
 <div class="container mt-3">
   <h2>Créer un compte</h2>
-  @if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-@endif
-
-@if (session('error'))
-    <div class="alert alert-danger">
-        {{ session('error') }}
-    </div>
-    @endif
-  <form action="{{Route('User.creerCompte')}}" method="post" required>
+  <form action="{{Route('User.creerCompte')}}" method="post" >
   @method('POST')
   @csrf
   <div class="row">
@@ -32,7 +21,7 @@
     </div>
     <div class="col">
         <label for="prenom">Prenom:</label>
-      <input type="text" class="form-control"  name="prenom" required>
+      <input type="text" class="form-control"   name="prenom" required>
     </div>
   </div>
     <div class="mb-3 mt-3">
