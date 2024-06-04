@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bien;
+use App\Models\commentaire;
 use Illuminate\Http\Request;
 
 class BienController extends Controller
@@ -35,7 +36,9 @@ class BienController extends Controller
     public function detail($id)
     {
         $biens = Bien::find($id);
-        return view('bien.detail', compact('biens'));
+        $commentaires=commentaire::all()->where('bien_id',$id);
+       
+        return view('bien.detail', compact('biens','commentaires'));
     }
     public function detailAdmin($id)
     {
@@ -71,5 +74,9 @@ class BienController extends Controller
         $biens = $this->biens->find($id);
         $biens->delete();
         return redirect('admin/bien');
+    }
+    public function posts(){
+        $posts=Bien::latest()->take(3)->get();
+        return view('bien.detail')->with($posts);
     }
 }
