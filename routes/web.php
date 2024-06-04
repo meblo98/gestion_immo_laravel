@@ -20,10 +20,13 @@ Route::delete('/deconnexion',[AuthController::class,'deconnexion'])->name('User.
 
 
 // routes des articles
-
+Route::get('/admin', [BienController::class, 'indexAdmin']);
 Route::get('/', [BienController::class, 'index']);
 Route::get('/detail/{id}', [BienController::class, 'detail'])->name('detail');
+Route::get('/admin/{id}/modifier', [BienController::class, 'modifier'])->name('modifier');
+Route::delete('/admin/{id}', [BienController::class, 'destroy'])->name('delete');
 
+// ('/detail/{id}/modifier', [BienController::class, 'modifier'])->name('modifier');
 
 Route::get('/ajout', [BienController::class, 'ajout'])->name('ajout');
 
