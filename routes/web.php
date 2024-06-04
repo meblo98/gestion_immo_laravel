@@ -8,7 +8,7 @@ use Illuminate\Auth\Middleware\Authenticate;
 use App\Http\Controllers\CommentaireController;
 
 
-Route::get('/',[CommentaireController::class,'commentaire']);
+// Route::get('/',[CommentaireController::class,'commentaire']);
 Route::get('/creation',[CommentaireController::class,'ajouter'])->name('commentaire.ajouter');
 Route::get('/compte',[AuthController::class,'compte']);
 Route::post('/compte',[AuthController::class,'creerCompte'])->name('User.creerCompte');
