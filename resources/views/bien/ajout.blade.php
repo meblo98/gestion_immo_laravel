@@ -1,7 +1,9 @@
+
 @extends('layout.sidebar')
 @section('content')
     {{-- <h1>bienvenue,{{Auth::User()->nom}}</h1> --}}
     {{-- <form action="{{Route('User.deconnexion')}}" Method="post">
+
 @csrf
 @method('DELETE')
 <button class="btn btn-danger" type="submit">deconnecter</button>
