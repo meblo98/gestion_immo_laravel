@@ -14,6 +14,7 @@ class Bien extends Model
     protected $fillable = [
         'nom',
         'url_image',
+        'prix',
         'description',
         'categorie',
         'status',
