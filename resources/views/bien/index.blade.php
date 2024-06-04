@@ -46,10 +46,27 @@
         color: black;
         border: none;
         margin: 10px;
+        background-color: #F8F8FA;
+        font-weight: bolder;
       }
       .button{
         margin-right: 10%;
       }
+      #plublier{
+        font-weight: bolder;
+        
+      }
+      #plublier span{
+        font-size: 18px;
+      }
+      #date{
+        font-weight: black;
+        margin: 10px;
+      }
+      i{
+        margin: 10px;
+      }
+      
       
       </style>
 
@@ -60,7 +77,7 @@
 <header>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar w/ text</a>
+    <a class="navbar-brand" href="#">Locations & Cie</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -70,10 +87,10 @@
           <a class="nav-link active" aria-current="page" href="#">Acvueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#">Apropos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="#">Blog</a>
         </li>
       </ul>
      <div class="button">
@@ -84,7 +101,7 @@
       <button type="submit" class="concte"><i class="fa-solid fa-right-to-bracket" style="color: black;"></i>  se connecter</button>
       </a>
       <a href="{{route('User.creerCompte')}}">
-      <button type="submit" id="plublier" class="btn btn-danger">+Publier</button>
+      <button type="submit" id="plublier" class="btn btn-danger"><span>+</span>Publier</button>
       </a>
       </div>
     </div>
@@ -94,7 +111,7 @@
 
 <main>
 
-  <section class="py-5 text-center container">
+  <section id="container" class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-light">Album example</h1>
@@ -127,9 +144,9 @@
               <p>  <i class="fa-solid fa-location-dot" style="color: gray;">  {{ $bien->localisation}}</i></p>
               <hr>
               <div class="date">
-              <p> <i class="fa-solid fa-clock" style="color: gray;" id="date"> </i>{{ $bien->created_at}}</p>
+              <p id="date"> <i class="fa-solid fa-clock" style="color: #1a55e3;"> </i>{{ $bien->created_at}}</p>
               <a href="{{ route('detail', $bien->id) }}">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">     <i class="fa-solid fa-eye" style="color: gray;"></i></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">     <i class="fa-solid fa-eye" style="color: #1a55e3;"></i></button>
                   </a>
               </div>
               <div class="d-flex justify-content-between align-items-center">

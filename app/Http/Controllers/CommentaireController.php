@@ -15,7 +15,7 @@ class CommentaireController extends Controller
  
     public function commentaire(){
         $commentaires=commentaire::all();
-        return view('commentaire.commentaire',compact('commentaires'));
+        return view('bien.detail',compact('commentaires'));
         
     }
     public function ajouter(Request $request){
@@ -25,9 +25,10 @@ class CommentaireController extends Controller
        
     }
 
-    public function indexcommentaire(){
-        $commentaires=commentaire::all();
-        return view('admin.commentaire',compact('commentaires'));
+    public function indexcommentaire($id){
+
+        $commentaires=commentaire::all($id);
+        return view('bien.detail',compact('commentaires'));
     }
 
 }
