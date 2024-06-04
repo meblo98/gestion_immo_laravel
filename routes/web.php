@@ -27,7 +27,7 @@ Route::get('/detail/{id}', [BienController::class, 'detail'])->name('detail');
 Route::get('/admin/{id}/modifier', [BienController::class, 'modifier'])->name('modifier');
 Route::delete('/admin/bien/{id}', [BienController::class, 'destroy'])->name('delete');
 
-// ('/detail/{id}/modifier', [BienController::class, 'modifier'])->name('modifier');
+Route::post('/admin/bien/{id}/modifier', [BienController::class, 'modifier'])->name('modifier');
 
 Route::get('/ajout', [BienController::class, 'ajout'])->name('ajout');
 

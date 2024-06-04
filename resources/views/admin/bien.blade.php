@@ -24,7 +24,11 @@
                                     <td><label class="badge badge-primary">{{$bien->statut}}</label></td>
                                     <td>{{ $bien->prix }}</td>
                                     <td>
-                                        <label class="badge badge-danger">Modifer</label>
+                                        <a class="d-inline-flex mb-3" href="{{ route('modifier', $bien->id) }}">
+                                            <button class="btn btn-primary btn-sm">
+                                                <i class="fa-solid fa-pencil"></i> Modifier
+                                            </button>
+                                        </a>
                                         <form action="{{ route('delete', $bien->id) }}" method="POST" style="display:inline">
                                             @csrf
                                             @method('DELETE')
