@@ -21,13 +21,15 @@ Route::delete('/deconnexion',[AuthController::class,'deconnexion'])->name('User.
 
 // routes des articles
 Route::get('/admin', [BienController::class, 'indexAdmin'])->name('admin');
+Route::get('/admin2', [BienController::class, 'indexAdmin2'])->name('admin2');
 Route::get('/admin/bien', [BienController::class, 'indexBien'])->name('admin.bien');
 Route::get('/', [BienController::class, 'index']);
 Route::get('/detail/{id}', [BienController::class, 'detail'])->name('detail');
-Route::get('/admin/{id}/modifier', [BienController::class, 'modifier'])->name('modifier');
+Route::get('admin/index4/{id}', [BienController::class, 'detailAdmin'])->name('detailadmin');
 Route::delete('/admin/bien/{id}', [BienController::class, 'destroy'])->name('delete');
 
-// ('/detail/{id}/modifier', [BienController::class, 'modifier'])->name('modifier');
+Route::get('/admin/bien/{id}/modifier', [BienController::class, 'edit'])->name('index3');
+Route::patch('/modifier/{id}', [BienController::class, 'modifier'])->name('modification');
 
 Route::get('/ajout', [BienController::class, 'ajout'])->name('ajout');
 

@@ -26,11 +26,21 @@ class BienController extends Controller
         $biens = Bien::all();
         return view('admin.bien', ['biens' => $biens]);
     }
+    public function indexAdmin2(){
+        $biens = Bien::all();
+        return view('admin.index2', ['biens' => $biens]);
+        
+    }
 
     public function detail($id)
     {
         $biens = Bien::find($id);
         return view('bien.detail', compact('biens'));
+    }
+    public function detailAdmin($id)
+    {
+        $biens = Bien::find($id);
+        return view('admin.index4', compact('biens'));
     }
 
 
@@ -45,15 +55,15 @@ class BienController extends Controller
 
     public function edit(string $id)
     {
-        $response['articles'] = $this->biens->find($id);
-        return view('bien.modifier')->with($response);
+        $response['biens'] = $this->biens->find($id);
+        return view('admin.index3')->with($response);
     }
 
     public function modifier(Request $request, string $id)
     {
         $biens = $this->biens->find($id);
         $biens->update(array_merge($biens->toArray(), $request->toArray()));
-        return redirect('admin');
+        return redirect('admin/bien');
     }
 
     public function destroy(string $id)
