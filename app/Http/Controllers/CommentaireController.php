@@ -12,7 +12,7 @@ class CommentaireController extends Controller
     $this->commentaire=new commentaire;
  }
   
-    //
+ 
     public function commentaire(){
         $commentaires=commentaire::all();
         return view('commentaire.commentaire',compact('commentaires'));
@@ -23,6 +23,11 @@ class CommentaireController extends Controller
         return back();
         
        
+    }
+
+    public function indexcommentaire(){
+        $commentaires=commentaire::all();
+        return view('admin.commentaire',compact('commentaires'));
     }
 
 }

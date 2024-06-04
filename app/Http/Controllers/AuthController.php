@@ -54,7 +54,7 @@ class AuthController extends Controller
             'password'=>$request->password,
         ];
         if(Auth::attempt($credentials)){
-           return redirect()->route('ajout')->with('success','Connexion');
+           return redirect()->route('admin')->with('success','Connexion');
 
         }else{
             return back()->with('error','Email ou mots de passe incorrect');

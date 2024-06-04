@@ -19,8 +19,12 @@ class BienController extends Controller
         return view('admin.index', ['biens' => $biens]);
     }
     public function indexAdmin(){
-        $biens = Bien::all();
+        $biens = Bien::latest()->take(6)->get();
         return view('admin.index', ['biens' => $biens]);
+    }
+    public function indexBien(){
+        $biens = Bien::all();
+        return view('admin.bien', ['biens' => $biens]);
     }
 
     public function detail($id)
@@ -56,6 +60,6 @@ class BienController extends Controller
     {
         $biens = $this->biens->find($id);
         $biens->delete();
-        return redirect('admin');
+        return redirect('admin/bien');
     }
 }
