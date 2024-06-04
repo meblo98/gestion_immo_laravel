@@ -10,39 +10,34 @@
 <body>
 
 <div class="container mt-3">
-  <h2>CONNEXION</h2>
-  @if(Session::has('sucess'))
-  <div class="alert alert-success" role="alert">
-{{Session::get('sucesse')}}
-  </div>
-  @endif
-  <form action="{{Route('User.creerCompte')}}" method="post">
+  <h2>Créer un compte</h2>
+  <form action="{{Route('User.creerCompte')}}" method="post" >
   @method('POST')
   @csrf
   <div class="row">
     <div class="col">
         <label for="nom">Nom:</label>
-      <input type="text" class="form-control"  name="nom" >
+      <input type="text" class="form-control"  name="nom"  required>
     </div>
     <div class="col">
         <label for="prenom">Prenom:</label>
-      <input type="text" class="form-control"  name="prenom">
+      <input type="text" class="form-control"   name="prenom" required>
     </div>
   </div>
     <div class="mb-3 mt-3">
       <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" name="email">
+      <input type="email" class="form-control" id="email" name="email" required>
     </div>
     <div class="mb-3">
       <label for="pwd">Mot de passe:</label>
-      <input type="password" class="form-control" id="pwd"  name="password">
+      <input type="password" class="form-control" id="pwd"  name="password" required>
     </div>
     <div class="col">
         <label for="nom">Numéro téléphone</label>
       <input type="number" class="form-control"  name="telephone" >
     </div>
     
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">s'inscrire</button>
   </form>
 </div>
 
