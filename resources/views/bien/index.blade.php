@@ -14,15 +14,19 @@
         {{-- <a href="{{ route('ajout') }}"></a> --}}
         @foreach ($biens as $bien)
 
-        <div class="card" style="width: 18rem;">
-            <img src="{{$bien->url_image}}" class="card-img-top" alt="photo du bien">
-            <div class="card-body">
-              <h5 class="card-title">{{$bien->nom}}</h5>
-              <p class="card-text">{{ $bien->categorie }}</p>
-              <a href="{{ route('detail', $bien->id) }}" class="btn btn-primary">Plus de detail</a>
+        <div class="row">
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{$bien->url_image}}" class="card-img-top" alt="photo du bien">
+                    <div class="card-body">
+                      <h5 class="card-title">{{$bien->nom}}</h5>
+                      <p class="card-text">{{ $bien->categorie }}</p>
+                      <a href="{{ route('detail', $bien->id) }}" class="btn btn-primary">Plus de detail</a>
+                    </div>
+                  </div>
             </div>
-          </div>
-            
+        </div>
+
         @endforeach
     </div>
 

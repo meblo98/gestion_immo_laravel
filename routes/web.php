@@ -11,10 +11,13 @@ Route::get('/', function () {
 });
 
 // routes des articles
-
+Route::get('/admin', [BienController::class, 'indexAdmin']);
 Route::get('/', [BienController::class, 'index']);
 Route::get('/detail/{id}', [BienController::class, 'detail'])->name('detail');
+Route::get('/admin/{id}/modifier', [BienController::class, 'modifier'])->name('modifier');
+Route::delete('/admin/{id}', [BienController::class, 'destroy'])->name('delete');
 
+// ('/detail/{id}/modifier', [BienController::class, 'modifier'])->name('modifier');
 
 Route::get('/ajout', [BienController::class, 'ajout'])->name('ajout');
 Route::post('/ajout/creation', [BienController::class, 'creation'])->name('creation');
