@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nom');
             $table->text('contenu');
             $table->unsignedBigInteger('bien_id');
-            $table->foreign('bien_id')->references('id')->on('biens');
+            $table->foreign('bien_id')->references('id')->on('biens')->onDelete('cascade');
             $table->timestamps();
         });
     }

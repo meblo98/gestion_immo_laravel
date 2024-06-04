@@ -18,7 +18,10 @@ return new class extends Migration
             $table->enum('categorie',['luxe','moyen']);
             $table->text('description');
             $table->string('localisation');
+            $table->unsignedBigInteger('prix');
             $table->enum('statut',['occupé','non occupé']);
+            $table->unsignedBigInteger('utilisateur_id');
+            $table->foreign('utilisateur_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

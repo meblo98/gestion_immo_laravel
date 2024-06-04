@@ -29,14 +29,67 @@
           font-size: 3.5rem;
         }
       }
-    </style>
+      .date{
+        display: flex;
+        justify-content:space-between;
+      }
+      #prix{
+        color: red;
+        font-size: 18px;
+        font-weight: bolder;
+      }
+      #categorie{
+        color: grey;
+
+      }
+      .concte{
+        color: black;
+        border: none;
+        margin: 10px;
+      }
+      .button{
+        margin-right: 10%;
+      }
+      
+      </style>
 
     
   </head>
   <body>
     
 <header>
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar w/ text</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Acvueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+      </ul>
+     <div class="button">
+        <a href="{{route('User.creerCompte')}}">
+      <button type="submit" class="concte"><i class="fa-solid fa-right-to-bracket" style="color:black;"></i>  s'inscrire</button>
+      </a>
+      <a href="{{route('User.seconnexion')}}">
+      <button type="submit" class="concte"><i class="fa-solid fa-right-to-bracket" style="color: black;"></i>  se connecter</button>
+      </a>
+      <a href="{{route('User.creerCompte')}}">
+      <button type="submit" id="plublier" class="btn btn-danger">+Publier</button>
+      </a>
+      </div>
+    </div>
+  </div>
+</nav>
 </header>
 
 <main>
@@ -67,23 +120,26 @@
         <img src="{{$bien->url_image}}" class="card-img-top" alt="photo du bien">
         </a>
             <div class="card-body">
-              <p class="card-text">{{ $bien->categorie }}</p>
-              <p class="card-text">{{ $bien->description }}</p>
-              <p><i class="fa-solid fa-location-dot" style="color: #74C0FC;">{{ $bien->localisation}}</i></p>
+              
+              <p class="card-text"id="categorie">{{ $bien->categorie }}</p>
+              <p class="card-text"id="nom">{{ $bien->nom}}</p>
+              <p class="card-text" id="prix">prix: {{ $bien->prix}} FCFA</p>
+              <p>  <i class="fa-solid fa-location-dot" style="color: gray;">  {{ $bien->localisation}}</i></p>
               <hr>
-              <div>
-              <p><i class="fa-solid fa-clock" style="color: #74C0FC;"></i>{{ $bien->created_at}}</p>
+              <div class="date">
+              <p> <i class="fa-solid fa-clock" style="color: gray;" id="date"> </i>{{ $bien->created_at}}</p>
+              <a href="{{ route('detail', $bien->id) }}">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">     <i class="fa-solid fa-eye" style="color: gray;"></i></button>
+                  </a>
               </div>
               <div class="d-flex justify-content-between align-items-center">
               
             
                 <div class="btn-group">
-                <a href="{{ route('detail', $bien->id) }}">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  </a>
+               
               
                 </div>
-                <small class="text-muted">9 mins</small>
+            
               </div>
             </div>
           </div>
