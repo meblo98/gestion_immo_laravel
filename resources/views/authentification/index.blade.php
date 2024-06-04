@@ -11,7 +11,12 @@
 
 <div class="container mt-3">
   <h2>CONNEXION</h2>
-  <form action="{{route('User.creation')}}" method="post">
+  @if(Session::has('sucess'))
+  <div class="alert alert-success" role="alert">
+{{Session::get('sucesse')}}
+  </div>
+  @endif
+  <form action="{{Route('User.creerCompte')}}" method="post">
   @method('POST')
   @csrf
   <div class="row">
