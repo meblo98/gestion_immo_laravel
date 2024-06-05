@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Plus Admin</title>
+    <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../assets/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../../assets/vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" />
 </head>
 <body>
-
 <div class="container mt-3">
-  <h2>CONNEXION</h2>
   @if (session('success'))
     <div class="alert alert-success">
         {{ session('success') }}
@@ -22,22 +27,36 @@
         {{ session('error') }}
     </div>
 @endif
-  <form action="{{Route('User.seconnexion')}}" Method="post">
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="content-wrapper d-flex align-items-center auth">
+            <div class="row flex-grow">
+                <div class="col-lg-4 mx-auto">
+                    <div class="auth-form-light text-left p-5">
+                        <div class="brand-logo">
+                            <h1>Connexion</h1>
+                        </div>
+                        <h4>Bonjour ! Commençons par le début</h4>
+                        <h6 class="fw-light">S'identifier pour continuer.</h6>
+  <form class="pt-3" action="{{Route('User.seconnexion')}}" Method="post">
   @csrf
-    <div class="mb-3 mt-3">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+  <div class="form-group">
+    <input type="email" id="email" class="form-control form-control-lg" name="email" id="exampleInputEmail1" placeholder="Votre email svp">
+    @error('email')
+    <span class="text-danger">{{$message}}</span>
+    @enderror
+</div>
+<div class="form-group">
+    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" name="password" placeholder="Entrer votre mot de passe">
+    @error('password')
+    <span class="text-danger">{{$message}}</span>
+    @enderror
+</div>
+    <div class="mt-3 d-grid gap-2">
+        <button type="submit" class="btn btn-block btn-primary btn-lg fw-semibold auth-form-btn">se connecter</button>
     </div>
-    <div class="mb-3">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
+    <div class="text-center mt-4 fw-light"> Vous n'avez pas de compte ? <a href="{{route('User.creerCompte')}}" class="text-primary">Créer</a>
     </div>
-    <div class="form-check mb-3">
-      <label class="form-check-label">
-        <input class="form-check-input" type="checkbox" name="remember"> Remember me
-      </label>
-    </div>
-    <button type="submit" class="btn btn-primary">se connecter</button>
   </form>
 </div>
 
