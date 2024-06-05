@@ -96,6 +96,12 @@
     height: calc(3rem + 2px) !important;
     border-radius:0;
 }
+.bien{
+  text-align: center;
+  font-size: 30px;
+  margin-top: 5%;
+  font-weight: bolder;
+}
 @media (min-width: 992px){
     .search-sec{
         position: relative;
@@ -126,7 +132,7 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Acvueil</a>
+          <a class="nav-link active" aria-current="page" href="#">Accueil</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Apropos</a>
@@ -173,22 +179,8 @@
         </a>
     </div>
 </section>
-
-<div class="col-md-6">
-         <div class="card flex-md-row mb-4 shadow-sm h-md-250">
-            <div class="card-body d-flex flex-column align-items-start">
-               <strong class="d-inline-block mb-2 text-success">Health</strong>
-               <h6 class="mb-0">
-                  <a class="text-dark" href="#">Food for Thought: Diet and Brain Health</a>
-               </h6>
-               <div class="mb-1 text-muted small">Nov 11</div>
-               <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-               <a class="btn btn-outline-success btn-sm" href="http://www.jquery2dotnet.com/">Continue reading</a>
-            </div>
-            <img class="card-img-right flex-auto d-none d-lg-block" alt="Thumbnail [200x250]" src="https://exterieur.housekeeping.tn/wp-content/uploads/2020/01/1580126791_967_132-belles-maisons-modernes-belles-photos.jpg" style="width: 200px; height: 250px;">
-         </div>
-      </div>
    </div>
+   <h1 class="bien">listes des Biens</h1>
   <div class="album py-5 bg-light">
     <div class="container">
 
@@ -237,13 +229,7 @@
 </main>
 
 <footer class="text-muted py-5">
-  <div class="container">
-    <p class="float-end mb-1">
-      <a href="#">Back to top</a>
-    </p>
-    <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-    <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
-  </div>
+ 
 </footer>
 
 
