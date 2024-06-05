@@ -59,8 +59,8 @@ class AuthController extends Controller
         }else{
             return back()->with('error','Email ou mots de passe incorrect');
         }
-       
-        
+
+
     }
     public function deconnexion(){
         Auth::logout();
