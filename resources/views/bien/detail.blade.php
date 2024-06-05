@@ -21,15 +21,15 @@
                             </div>
                             <h3><a href="blog-details.html">{{ $biens->nom }}</a></h3>
                             <p>{{ $biens->description }}</p>
-                        </div>                        
+                        </div>
                     </div>
                     <div class="card">
                             <div class="header">
                                 <h2>commentaires</h2>
                             </div>
                             @foreach ($commentaires as $commentaire )
-                            
-                          
+
+
                             <div class="body">
                                 <ul class="comment-reply list-unstyled">
                                     <li class="row clearfix">
@@ -43,8 +43,8 @@
                                             </ul>
                                         </div>
                                     </li>
-        
-                                </ul>                                        
+
+                                </ul>
                             </div>
                             @endforeach
                         </div>
@@ -70,7 +70,7 @@
                                                 <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
                                             </div>
                                             <button type="submit" class="btn btn-block btn-primary">SUBMIT</button>
-                                        </div>                                
+                                        </div>
                                     </form>
                                 </div>
                             </div>
@@ -83,34 +83,34 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fa fa-search"></i></span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Search...">                                    
+                                <input type="text" class="form-control" placeholder="Search...">
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="card">
                         <div class="header">
-                            <h2>Popular Posts</h2>                        
+                            <h2>Popular Posts</h2>
                         </div>
                         <div class="body widget popular-post">
                             <div class="row">
-                              
-                              
-                             
+
+
+
                                 <div class="col-lg-12">
-                              
-                                    <div class="single_post">
+
+                                    {{-- <div class="single_post">
                                       @foreach ( $posts as $bien)
-                                      
-                                   
+
+
                                         <p class="m-b-0">{{$bien->nom}}</p>
                                         <span>jun 22, 2018</span>
                                         <div class="img-post">
-                                            <img src="{{($bien->url_image)}}" alt="Awesome Image">                                        
-                                        </div>  
-                                        @endforeach                                     
+                                            <img src="{{($bien->url_image)}}" alt="Awesome Image">
+                                        </div>
+                                        @endforeach
                                     </div>
-                                    
+                                     --}}
                                     </div>
                                 </div>
                             </div>
@@ -138,7 +138,7 @@
                         <div class="header">
                             <h2>Email Newsletter <small>Get our products/news earlier than others, let’s get in touch.</small></h2>
                         </div>
-                        <div class="body widget newsletter">                        
+                        <div class="body widget newsletter">
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Enter Email">
                                 <div class="input-group-append">

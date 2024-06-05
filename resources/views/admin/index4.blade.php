@@ -29,9 +29,12 @@
 </head>
 <body>
 
-    
+
     <div class="container mt-5">
         <div class="row">
+            <div class="col">
+                <a class="btn btn-dark" href="{{ route('admin2') }}">Retour</a>
+            </div>
             <div class="col-lg-12">
 
                 <!-- Post content-->
@@ -53,7 +56,7 @@
                     <section class="mb-5">
                         <p class="fs-5 mb-4">{{ $biens->description }}</p>
                         <p class="fs-5 mb-4 d-flex">
-                  
+
                     </section>
                 </article>
 
@@ -62,6 +65,6 @@
 
         </div>
     </div>
-    
+
 </body>
 </html>

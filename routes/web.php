@@ -38,4 +38,4 @@ Route::post('/ajout/creation', [BienController::class, 'creation'])->name('creat
 Route::get('/commentaire',[CommentaireController::class,'commentaire']);
 Route::get('/creation',[CommentaireController::class,'ajouter'])->name('commentaire.ajouter');
 
-Route::get('/admin/commentaire',[CommentaireController::class,'indexcommentaire'])->name('admin.commentaire');
+Route::get('/admin/commentaire',[CommentaireController::class,'indexCommentaire'])->name('admin.commentaire');

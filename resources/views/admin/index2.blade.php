@@ -3,6 +3,21 @@
     <div class="container mt-5 p-5">
         <h4 class="card-title">Liste des Biens</h4>
         <div class="">
+            <div class="page-header flex-wrap">
+                <div class="header-left">
+
+                </div>
+                <div class="header-right d-flex flex-wrap mt-2 mt-sm-0">
+                    <div class="d-flex align-items-center">
+                        <a href="#">
+                            <p class="m-0 pe-3">Dashboard</p>
+                        </a>
+                    </div>
+                    <button type="button" class="btn btn-primary mt-2 mt-sm-0 btn-icon-text">
+                        <i class="mdi mdi-plus-circle"></i> <a href="{{ route('ajout') }}">Ajouter un bien</a>
+                    </button>
+                </div>
+            </div>
             <div class="card">
 
                 <div class="table-responsive">
@@ -16,9 +31,11 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        @foreach ($biens as $bien)
+                       
                             <tbody>
+                                
                                 <tr>
+                                    @foreach ($biens as $bien)
                                     <td>{{ $bien->nom }}</td>
                                     <td>{{ $bien->localisation }}</td>
                                     <td><label class="badge badge-primary">{{ $bien->statut }}</label></td>
@@ -31,8 +48,7 @@
                                         <a class="btn d-inline-flex mb-3" href="{{ route('detailadmin', $bien->id) }}">
                                             <i class="fa fa-eye
                                             "> </i>                                          
-                                        </a>
-                                        
+                                        </a>                                        
                                         <form action="{{ route('delete', $bien->id) }}" method="POST"
                                             style="display:inline">
                                             @csrf
@@ -42,13 +58,15 @@
                                                 </button>
                                         </form>
                                     </td>
+                                    
                                 </tr>
 
                             </tbody>
+                            @endforeach
                     </table>
                 </div>
             </div>
         </div>
     </div>
-    @endforeach
+   
 @endsection
