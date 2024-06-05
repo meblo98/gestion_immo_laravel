@@ -15,7 +15,7 @@ Route::post('/compte',[AuthController::class,'creerCompte'])->name('User.creerCo
 
 Route::get('/connexion',[AuthController::class,'connexion']);
 Route::post('/connexion',[AuthController::class,'seconnexion'])->name('User.seconnexion');
-Route::delete('/deconnexion',[AuthController::class,'deconnexion'])->name('User.deconnexion');
+Route::delete('/connexion',[AuthController::class,'deconnexion'])->name('User.deconnexion');
 
 
 
