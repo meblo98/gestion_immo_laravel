@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BienController;
 use App\Http\Controllers\CommentaireController;
+
 
 
     Route::get('/admin', [BienController::class, 'indexAdmin'])->name('admin');
@@ -16,8 +18,7 @@ use App\Http\Controllers\CommentaireController;
     Route::post('/ajout/creation', [BienController::class, 'creation'])->name('creation');
     Route::get('/ajout', [BienController::class, 'ajout'])->name('ajout');
     
-//     Route::middleware('auth')->group(function () {
-// });
+
 
 // Route::get('/',[CommentaireController::class,'commentaire']);
 Route::get('/creation',[CommentaireController::class,'ajouter'])->name('commentaire.ajouter');

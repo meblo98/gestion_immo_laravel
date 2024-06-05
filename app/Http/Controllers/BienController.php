@@ -50,6 +50,7 @@ class BienController extends Controller
         return view('bien.detail', compact('biens','commentaires'));    }
     public function detailAdmin($id)
     {
+        $posts=Bien::latest()->take(3)->get();
         $biens = Bien::find($id);
         return view('admin.index4', compact('biens'));
     }
