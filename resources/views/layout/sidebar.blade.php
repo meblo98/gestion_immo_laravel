@@ -85,17 +85,17 @@
             </ul>
             <ul class="nav">
                 <li class="nav-item">
-                    {{-- <form action="{{ Route('User.deconnexion') }}" Method="post">
+                    <form action="{{ Route('User.deconnexion') }}" Method="post">
                         @csrf
-                        @method('DELETE') --}}
+                        @method('DELETE')
 
-                        {{-- <button type="submit"> --}}
+                        <button class="nav-link" type="submit">
                              <a class="nav-link"  href="{{ Route('User.deconnexion') }}">
                                 <i class="fa fa-power-off menu-icon"></i>
                                 <span class="menu-title">deconnecter</span>
                             </a>
-                        {{-- </button>
-                    </form> --}}
+                        </button>
+                    </form>
                 </li>
             </ul>
         </nav>

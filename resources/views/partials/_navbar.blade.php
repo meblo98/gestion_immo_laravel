@@ -96,14 +96,12 @@
     </ul>
     <ul class="navbar-nav navbar-nav-right">
       <li class="nav-item nav-logout d-none d-md-block me-3">
-        <a class="nav-link" href="#">Status</a>
+        <a class="nav-link" href="#"></a>
       </li>
-      <li class="nav-item nav-logout d-none d-md-block">
-        <button class="btn btn-sm btn-danger">Trailing</button>
-      </li>
+
       <li class="nav-item nav-profile dropdown d-none d-md-block">
         <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-          <div class="nav-profile-text">English </div>
+          <div class="nav-profile-text"> </div>
         </a>
         <div class="dropdown-menu center navbar-dropdown" aria-labelledby="profileDropdown">
           <a class="dropdown-item" href="#">

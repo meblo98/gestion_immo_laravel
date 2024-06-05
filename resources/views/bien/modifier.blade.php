@@ -28,7 +28,7 @@
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon2">Image URL</span>
             <input type="text" name="url_image" class="form-control" value="{{ $biens->url_image }}"
-                placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2"> 
+                placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
             <span class="input-group-text">Prix</span>
             <input type="number" name="prix" class="form-control" value="{{ $biens->prix }}" placeholder="prix" aria-label="prix">
           </div>
@@ -36,7 +36,7 @@
             <span class="input-group-text">Description</span>
             <textarea class="form-control" name="description" aria-label="With textarea">{{ $biens->description }}</textarea>
           </div>
-          <button type="submit" class="btn btn-primary mt-3">Ajouter</button>
+          <button type="submit" class="btn btn-primary mt-3">Modifer</button>
     </form>
 </div>
 

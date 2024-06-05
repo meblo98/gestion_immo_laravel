@@ -21,8 +21,10 @@ class BienController extends Controller
     }
     public function indexAdmin(){
         $biens = Bien::latest()->take(6)->get();
-        return view('admin.index', ['biens' => $biens]);
+        $commentaires = commentaire::latest()->take(6)->get();
+        return view('admin.index', ['biens' => $biens], ['commentaires' => $commentaires]);
     }
+
     public function indexBien(){
         $biens = Bien::all();
         return view('admin.bien', ['biens' => $biens]);
@@ -30,7 +32,7 @@ class BienController extends Controller
     public function indexAdmin2(){
         $biens = Bien::all();
         return view('admin.index2', ['biens' => $biens]);
-        
+
     }
 
     public function detail($id)
@@ -38,9 +40,12 @@ class BienController extends Controller
         $posts=Bien::latest()->take(3)->get();
         $biens = Bien::find($id);
         $commentaires=commentaire::all()->where('bien_id',$id);
+
        
         return view('bien.detail', compact('biens','commentaires','posts'));
-    }
+
+
+        return view('bien.detail', compact('biens','commentaires'));    }
     public function detailAdmin($id)
     {
         $biens = Bien::find($id);
