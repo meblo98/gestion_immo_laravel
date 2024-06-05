@@ -35,10 +35,11 @@ class BienController extends Controller
 
     public function detail($id)
     {
+        $posts=Bien::latest()->take(3)->get();
         $biens = Bien::find($id);
         $commentaires=commentaire::all()->where('bien_id',$id);
        
-        return view('bien.detail', compact('biens','commentaires'));
+        return view('bien.detail', compact('biens','commentaires','posts'));
     }
     public function detailAdmin($id)
     {
