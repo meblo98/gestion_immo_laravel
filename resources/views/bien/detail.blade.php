@@ -37,7 +37,7 @@
                                             <p>{{$commentaire->contenu}}</p>
                                             <ul class="list-inline">
                                                 <li><a href="javascript:void(0);">{{$commentaire->created_at}}</a></li>
-                                                <li><a href="javascript:void(0);">Reply</a></li>
+                                             
                                             </ul>
                                         </div>
                                     </li>
