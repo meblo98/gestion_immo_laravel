@@ -26,7 +26,7 @@ Route::get('/admin/bien', [BienController::class, 'indexBien'])->name('admin.bie
 Route::get('/', [BienController::class, 'index']);
 Route::get('/detail/{id}', [BienController::class, 'detail'])->name('detail');
 Route::get('admin/index4/{id}', [BienController::class, 'detailAdmin'])->name('detailadmin');
-Route::delete('/admin/bien/{id}', [BienController::class, 'destroy'])->name('delete');
+Route::delete('/admin2/{id}', [BienController::class, 'destroy'])->name('delete');
 
 Route::get('/admin/bien/{id}/modifier', [BienController::class, 'edit'])->name('index3');
 Route::patch('/modifier/{id}', [BienController::class, 'modifier'])->name('modification');

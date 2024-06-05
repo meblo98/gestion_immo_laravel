@@ -72,14 +72,14 @@ class BienController extends Controller
     {
         $biens = $this->biens->find($id);
         $biens->update(array_merge($biens->toArray(), $request->toArray()));
-        return redirect('admin/bien');
+        return redirect('admin2');
     }
 
     public function destroy(string $id)
     {
         $biens = $this->biens->find($id);
         $biens->delete();
-        return redirect('admin/bien');
+        return redirect()->back();
     }
     public function posts(){
         $posts=Bien::latest()->take(3)->get();
