@@ -8,65 +8,65 @@
   <title>Document</title>
 </head>
 <body>
-
-
-<div id="main-content" class="blog-page">
+    <div id="main-content" class="blog-page">
         <div class="container">
             <div class="row clearfix">
                 <div class="col-lg-8 col-md-12 left-box">
-                    <div class="card">
+                    <div class="card single_post">
                         <div class="body">
                             <div class="img-post">
-                                <img class="d-block img-fluid" src="{{ $biens->url_image }}" alt="">
+                                <img class="d-block img-fluid" src="{{ $biens->url_image }}" alt="First slide">
                             </div>
                             <h3><a href="blog-details.html">{{ $biens->nom }}</a></h3>
                             <p>{{ $biens->description }}</p>
-                        </div>                        
+                        </div>
                     </div>
                     <div class="card">
                             <div class="header">
                                 <h2>commentaires</h2>
                             </div>
                             @foreach ($commentaires as $commentaire )
-                            
-                          
+
+
                             <div class="body">
                                 <ul class="comment-reply list-unstyled">
                                     <li class="row clearfix">
-                                        <div class="icon-box col-md-2 col-4"><img class="img-fluid img-thumbnail" src="https://image.freepik.com/icones-gratuites/commentaires_318-41876.jpg" ></div>
+                                        <div class="icon-box col-md-2 col-4"><img class="img-fluid img-thumbnail" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Awesome Image"></div>
                                         <div class="text-box col-md-10 col-8 p-l-0 p-r0">
                                             <h5 class="m-b-0">{{$commentaire->nom}}</h5>
                                             <p>{{$commentaire->contenu}}</p>
                                             <ul class="list-inline">
                                                 <li><a href="javascript:void(0);">{{$commentaire->created_at}}</a></li>
+                                                <li><a href="javascript:void(0);">Reply</a></li>
                                             </ul>
                                         </div>
                                     </li>
-        
-                                </ul>                                        
+
+                                </ul>
                             </div>
                             @endforeach
                         </div>
                         <div class="card">
                             <div class="header">
-                                <h2>Ajouter un commentaire</h2>
+                                <h2>ajouter un commentaire</h2>
                             </div>
                             <div class="body">
                                 <div class="comment-form">
-                                    <form class="row clearfix"  action=" {{route('commentaire.ajouter')}}" action="post">
-                                    @csrf
+                                    <form class="row clearfix" action=" {{route('commentaire.ajouter')}}" action="post">
                                     <input type="hidden" name="bien_id" value="{{$biens->id}}">
+                                    @csrf
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <input type="text" class="form-control" placeholder="votre nom" name="nom">
                                             </div>
                                         </div>
+                                        
                                         <div class="col-sm-12">
                                             <div class="form-group">
-                                                <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..." name="contenu"></textarea>
+                                                <textarea rows="4" class="form-control no-resize"  name="contenu"></textarea>
                                             </div>
                                             <button type="submit" class="btn btn-block btn-primary">envoyer</button>
-                                        </div>                                
+                                        </div>
                                     </form>
                                 </div>
                             </div>
@@ -79,33 +79,32 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fa fa-search"></i></span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Search...">                                    
+                                <input type="text" class="form-control" placeholder="Search...">
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="card">
                         <div class="header">
-                            <h2>les derniers posts</h2>                        
+                            <h2>Popular Posts</h2>
                         </div>
                         <div class="body widget popular-post">
                             <div class="row">
-                              
-                              
-                             
+
+
+
                                 <div class="col-lg-12">
-                              
+
                                     <div class="single_post">
                                       @foreach ( $posts as $bien)
-                                      
-                                   
+
+
                                         <p class="m-b-0">{{$bien->nom}}</p>
-                                        <span>{{$bien->created_at}}</span>
+                                        <span>jun 22, 2018</span>
                                         <div class="img-post">
-                                            
-                                            <img src="{{($bien->url_image)}}" alt="Awesome Image">                                        
-                                        </div>  
-                                        @endforeach                                     
+                                            <img src="{{($bien->url_image)}}" alt="Awesome Image">
+                                        </div>
+                                        @endforeach
                                     </div>
                                     
                                     </div>
@@ -113,7 +112,8 @@
                             </div>
                         </div>
                     </div>
-                  
+                
+                 
                 </div>
             </div>
 
