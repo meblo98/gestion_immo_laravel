@@ -6,12 +6,14 @@ use App\Models\Bien;
 use App\Models\commentaire;
 use Illuminate\Http\Request;
 
+
 class BienController extends Controller
 {
     public $biens;
+
     public function __construct(){
         $this->biens = new Bien();
-
+        
     }
 
     public function index(){
