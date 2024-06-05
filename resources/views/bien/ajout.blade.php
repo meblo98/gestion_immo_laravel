@@ -12,6 +12,7 @@
         <h1 class="text-center">Ajout de bien</h1>
         <form action="{{ route('creation') }}" method="POST" enctype="multipart/form-data">
             @csrf
+            <input type="hidden" name="utilisateur_id" value="{{Auth::User()->id}}">
             <div class="input-group mb-3">
                 <span class="input-group-text">Titre</span>
                 <input type="text" name="nom" class="form-control" value="{{ old('nom') }}" placeholder="Titre"

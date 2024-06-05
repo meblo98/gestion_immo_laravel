@@ -20,6 +20,7 @@ class Bien extends Model
         'categorie',
         'status',
         'localisation',
+        'utilisateur_id'
     ];
     public function comments(): HasMany
     {

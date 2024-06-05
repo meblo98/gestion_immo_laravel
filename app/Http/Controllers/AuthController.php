@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
     public function compte(){
-        return view('authentification/index');
+        return view('authentifications/index');
     }
     //
     public function creerCompte(Request $request){
@@ -39,10 +39,10 @@ class AuthController extends Controller
         $user->telephone=$request->telephone;
         $user->password=Hash::make($request->password);
         $user->save();
-        return view('authentification.connexion')->with('success','compte créer avec sucess');
+        return view('authentifications.connexion')->with('success','compte créer avec sucess');
     }
     public function connexion(){
-        return view('authentification.connexion');
+        return view('authentifications.connexion');
     }
     public function seconnexion(Request $request){
         $request->validate([
@@ -64,6 +64,6 @@ class AuthController extends Controller
     }
     public function deconnexion(){
         Auth::logout();
-        return view('authentification.connexion');
+        return view('authentifications.connexion');
     }
 }
