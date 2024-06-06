@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bien;
-use App\Models\commentaire;
+use App\Models\Commentaire;
 use Illuminate\Http\Request;
 
 
@@ -13,7 +13,7 @@ class BienController extends Controller
 
     public function __construct(){
         $this->biens = new Bien();
-        
+
     }
 
     public function index(){
@@ -23,8 +23,10 @@ class BienController extends Controller
     }
     public function indexAdmin(){
         $biens = Bien::latest()->take(6)->get();
-        $commentaires = commentaire::latest()->take(6)->get();
+
+        $commentaires = Commentaire::latest()->take(6)->get();
         return view('admins.index', ['biens' => $biens], ['commentaires' => $commentaires]);
+
     }
 
     public function indexBien(){
@@ -41,9 +43,9 @@ class BienController extends Controller
     {
         $posts=Bien::latest()->take(3)->get();
         $biens = Bien::find($id);
-        $commentaires=commentaire::all()->where('bien_id',$id);
+        $commentaires=Commentaire::all()->where('bien_id',$id);
 
-       
+
         return view('biens.detail', compact('biens','commentaires','posts'));
 
 
