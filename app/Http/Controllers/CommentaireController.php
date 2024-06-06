@@ -9,17 +9,17 @@ class CommentaireController extends Controller
 {
     protected $commentaire;
  public function __construct(){
-    $this->commentaire=new commentaire;
+    $this->commentaire=new Commentaire;
  }
 
 
     public function commentaire(){
-        $commentaires=commentaire::all();
+        $commentaires=Commentaire::all();
         return view('bien.detail',compact('commentaires'));
 
     }
     public function ajouter(Request $request){
-        commentaire::create($request->all());
+        Commentaire::create($request->all());
         return back();
 
 
@@ -27,12 +27,12 @@ class CommentaireController extends Controller
 
     public function indexcommentaire($id){
 
-        $commentaires=commentaire::all($id);
+        $commentaires=Commentaire::all($id);
         return view('bien.detail',compact('commentaires'));
     }
 
     public function indexCommenatire(){
-        $commentaires = commentaire::latest()->take(6)->get();
+        $commentaires = Commentaire::latest()->take(6)->get();
         return view('admin.index', ['commentaires' => $commentaires]);
     }
 
