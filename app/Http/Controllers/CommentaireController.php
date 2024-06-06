@@ -30,7 +30,7 @@ class CommentaireController extends Controller
 
         $commentaires = Commentaire::all();
 
-        return view('biens.detail', compact('commentaires'));
+        return view('admins.commentaire', compact('commentaires'));
     }
 
 
