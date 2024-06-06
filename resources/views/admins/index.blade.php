@@ -1,4 +1,4 @@
-@extends('layout.sidebar')
+@extends('layouts.sidebar')
 
 @section('content')
     <div class="main-panel">

@@ -1,5 +1,5 @@
 
-@extends('layout.sidebar')
+@extends('layouts.sidebar')
 @section('content')
     <div id="main-content" class="blog-page">
         <div class="container">
@@ -14,7 +14,7 @@
                             <p>{{ $biens->description }}</p>
                         </div>
                     </div>
-        
+
 
                 </div>
                 <div class="col-lg-4 col-md-12 right-box">
@@ -30,7 +30,7 @@
                     </div>
 
 
-    
+
                 </div>
             </div>
 

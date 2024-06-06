@@ -1,4 +1,4 @@
-@extends('layout.sidebar')
+@extends('layouts.sidebar')
 @section('content')
 <div class="container mt-3">
     <h1 class="text-center">Ajout de bien</h1>

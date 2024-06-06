@@ -1,5 +1,5 @@
 
-@extends('layout.sidebar')
+@extends('layouts.sidebar')
 @section('content')
     {{-- <h1>bienvenue,{{Auth::User()->nom}}</h1> --}}
     {{-- <form action="{{Route('User.deconnexion')}}" Method="post">
@@ -39,7 +39,7 @@
                 <span class="input-group-text" id="basic-addon2">Image URL</span>
                 <input type="text" name="url_image" class="form-control" value="{{ old('url_image') }}"
                     placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                
+
                 <span class="input-group-text">Prix</span>
                 <input type="number" name="prix" class="form-control" placeholder="prix" aria-label="prix">
             </div>
