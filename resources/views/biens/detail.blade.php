@@ -37,7 +37,7 @@
                                             <p>{{$commentaire->contenu}}</p>
                                             <ul class="list-inline">
                                                 <li><a href="javascript:void(0);">{{$commentaire->created_at}}</a></li>
-                                             
+
                                             </ul>
                                         </div>
                                     </li>
@@ -60,7 +60,7 @@
                                                 <input type="text" class="form-control" placeholder="votre nom" name="nom">
                                             </div>
                                         </div>
-                                        
+
                                         <div class="col-sm-12">
                                             <div class="form-group">
                                                 <textarea rows="4" class="form-control no-resize"  name="contenu"></textarea>
@@ -106,14 +106,14 @@
                                         </div>
                                         @endforeach
                                     </div>
-                                    
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                
-                 
+
+
                 </div>
             </div>
 

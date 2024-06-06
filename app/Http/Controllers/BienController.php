@@ -13,27 +13,29 @@ class BienController extends Controller
 
     public function __construct(){
         $this->biens = new Bien();
-        
+
     }
 
     public function index(){
         $biens = Bien::all();
-        return view('bien.index', ['biens' => $biens]);
-        return view('admin.index', ['biens' => $biens]);
+        return view('biens.index', ['biens' => $biens]);
+        return view('admins.index', ['biens' => $biens]);
     }
     public function indexAdmin(){
         $biens = Bien::latest()->take(6)->get();
+
         $commentaires = Commentaire::latest()->take(6)->get();
-        return view('admin.index', ['biens' => $biens], ['commentaires' => $commentaires]);
+        return view('admins.index', ['biens' => $biens], ['commentaires' => $commentaires]);
+
     }
 
     public function indexBien(){
         $biens = Bien::all();
-        return view('admin.bien', ['biens' => $biens]);
+        return view('admins.bien', ['biens' => $biens]);
     }
     public function indexAdmin2(){
         $biens = Bien::all();
-        return view('admin.index2', ['biens' => $biens]);
+        return view('admins.index2', ['biens' => $biens]);
 
     }
 
@@ -43,20 +45,21 @@ class BienController extends Controller
         $biens = Bien::find($id);
         $commentaires=Commentaire::all()->where('bien_id',$id);
 
-       
-        return view('bien.detail', compact('biens','commentaires','posts'));
+
+        return view('biens.detail', compact('biens','commentaires','posts'));
 
 
-        return view('bien.detail', compact('biens','commentaires'));    }
+        return view('biens.detail', compact('biens','commentaires'));    }
     public function detailAdmin($id)
     {
+        $posts=Bien::latest()->take(3)->get();
         $biens = Bien::find($id);
-        return view('admin.index4', compact('biens'));
+        return view('admins.index4', compact('biens'));
     }
 
 
     public function ajout(){
-        return view ('bien.ajout');
+        return view ('biens.ajout');
     }
 
     public function creation(Request $request){
@@ -67,7 +70,7 @@ class BienController extends Controller
     public function edit(string $id)
     {
         $response['biens'] = $this->biens->find($id);
-        return view('admin.index3')->with($response);
+        return view('admins.index3')->with($response);
     }
 
     public function modifier(Request $request, string $id)
@@ -85,6 +88,6 @@ class BienController extends Controller
     }
     public function posts(){
         $posts=Bien::latest()->take(3)->get();
-        return view('bien.detail')->with($posts);
+        return view('biens.detail')->with($posts);
     }
 }
